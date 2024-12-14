@@ -6,17 +6,16 @@ def createFrame(character):
         frame += "1"
     else:
         frame += "0" #if the character is not a number then heading bit is "0"
-    frame += "0" + binary #adds the 7 bits corresponding the the ASCII value of the character to the frame
+    frame += (8 - len(binary)) * "0" + binary #adds the 7 bits corresponding the the ASCII value of the character to the frame and pads with zeros at the beggining so there is always 8 data bits
     if binary.count("1") %2 == 0: #adds a parity bit where the if the number of "1"s in the data bits is even then the parity bit is "0" if its odd its "1"
         frame += "0"
     else:
         frame += "1"
     frame += "0" #adds stop bit to the end "0"
+    print(binary)
     return frame
 
 
 
-print(createFrame("h"))
-    
-
+print(createFrame("7"))
 
