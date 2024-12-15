@@ -1,5 +1,6 @@
-
+global number
 string = input("input string")
+number = []
 
 def createFrame(character):
     frame = "1" #every frame starts with a start bit which is "1"
@@ -15,9 +16,15 @@ def createFrame(character):
         frame += "1"
     frame += "0" #adds stop bit to the end "0"
     print(frame)
+def createNumberFrame(number):
+    print()
 
 for i in string:
-    createFrame(i)
-
-
-
+    if i.isdigit() == True:
+        number.append(i)
+    if i.isdigit() == False and number != []:
+        createNumberFrame(number)
+        number = []
+        createFrame(i)
+    if i.isdigit() == False and number == []:
+        createFrame(i)
