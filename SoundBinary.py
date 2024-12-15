@@ -1,4 +1,6 @@
 
+string = input("input string")
+
 def createFrame(character):
     frame = "1" #every frame starts with a start bit which is "1"
     binary = bin(ord(character))[2:]
@@ -12,10 +14,10 @@ def createFrame(character):
     else:
         frame += "1"
     frame += "0" #adds stop bit to the end "0"
-    print(binary)
-    return frame
+    print(frame)
+
+for i in string:
+    createFrame(i)
 
 
-
-print(createFrame("7"))
 
