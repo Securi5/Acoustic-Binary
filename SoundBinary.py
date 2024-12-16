@@ -1,6 +1,4 @@
-global number
 string = str(input("input string"))
-
 
 def createFrame(character):
     frame = "10" #every frame starts with a start bit which is "1"
